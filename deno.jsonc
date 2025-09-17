@@ -5,15 +5,14 @@
     },
     "imports": {
         "./lib/src/worker/bgWorker.ts": "./lib/src/worker/bgWorker.mock.ts",
-        "../worker/splitWorker.ts": "../worker/splitWorker.mock.ts",
-        "./lib/src/worker/splitWorker.ts": "./lib/src/worker/splitWorker.mock.ts",
+        "./lib/src/worker/bgWorker": "./lib/src/worker/bgWorker.mock.ts",
         "fs/walk": "jsr:@std/fs@^1.0.17/",
         "@std/async": "jsr:@std/async@^1.0.12",
         "@std/path": "jsr:@std/path@^1.0.9",
         "@types/diff-match-patch": "npm:@types/diff-match-patch@^1.0.36",
         "@types/pouchdb": "npm:@types/pouchdb@^6.4.2",
         "diff-match-patch": "npm:diff-match-patch@^1.0.5",
-        "octagonal-wheels": "npm:octagonal-wheels@^0.1.25",
+        "octagonal-wheels": "npm:octagonal-wheels@^0.1.39",
         "xxhash-wasm-102": "npm:xxhash-wasm@^1.0.2",
         "crypto": "node:crypto",
         "minimatch": "npm:minimatch",
@@ -27,7 +26,8 @@
         "pouchdb-errors": "npm:pouchdb-errors@^9.0.0",
         "pouchdb-mapreduce": "npm:pouchdb-mapreduce@^9.0.0",
         "transform-pouch": "npm:transform-pouch@^2.0.0",
-        "chokidar": "npm:chokidar@^3.5.1"
+        "chokidar": "npm:chokidar@^3.5.1",
+        "trystero": "https://github.com/vrtmrz/vrtmrz/trystero#9e892a93ec14eeb57ce806d272fbb7c3935256d8"
     },
     "lint": {
         "rules": {

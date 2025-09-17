@@ -5,12 +5,12 @@ import { delay, getDocData } from "./lib/src/common/utils.ts";
 import { isPlainText } from "./lib/src/string_and_binary/path.ts";
 import { parse, format, relative, dirname, resolve } from "@std/path";
 import { format as posixFormat, parse as posixParse } from "@std/path/posix"
-import { scheduleOnceIfDuplicated } from "./lib/src/concurrency/lock.ts";
+import { scheduleOnceIfDuplicated } from "octagonal-wheels/concurrency/lock";
 import { DispatchFun, Peer } from "./Peer.ts";
 import chokidar from "chokidar";
 import { walk } from 'fs/walk';
 
-import { scheduleTask } from "./lib/src/concurrency/task.ts";
+import { scheduleTask } from "octagonal-wheels/concurrency/task";
 
 export class PeerStorage extends Peer {
     declare config: PeerStorageConf;

@@ -7,7 +7,7 @@ VOLUME /app/data
 
 COPY . .
 
-RUN deno install
+RUN deno install -A
 
 CMD [ "deno", "task", "run" ]
 

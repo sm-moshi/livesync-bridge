@@ -117,7 +117,16 @@ export class PeerCouchDB extends Peer {
                 }
                 this.config.useDynamicIterationCount = tweaks.useDynamicIterationCount ?? this.config.useDynamicIterationCount;
                 this.config.enableChunkSplitterV2 = tweaks.enableChunkSplitterV2 ?? this.config.enableChunkSplitterV2;
+                this.config.chunkSplitterVersion = tweaks.chunkSplitterVersion ?? this.config.chunkSplitterVersion;
+                this.config.E2EEAlgorithm = tweaks.E2EEAlgorithm ?? this.config.E2EEAlgorithm;
+                this.config.minimumChunkSize = tweaks.minimumChunkSize ?? this.config.minimumChunkSize;
+                this.config.customChunkSize = tweaks.customChunkSize ?? this.config.customChunkSize;
+                this.config.doNotUseFixedRevisionForChunks = tweaks.doNotUseFixedRevisionForChunks ?? this.config.doNotUseFixedRevisionForChunks;
+                this.config.handleFilenameCaseSensitive = tweaks.handleFilenameCaseSensitive ?? this.config.handleFilenameCaseSensitive;
                 const newConf = { ...this.config } as Record<string, any>;
+                this.man.options = this.config;
+                await this.man.liveSyncLocalDB.initializeDatabase()
+                // await this.man.managers.initManagers();
                 const diff = unique([...Object.keys(orgConf), ...Object.keys(tweaks)]).filter(k => orgConf[k] != newConf[k]);
                 if (diff.length > 0) {
                     this.normalLog(`Remote tweaks changed --->`);

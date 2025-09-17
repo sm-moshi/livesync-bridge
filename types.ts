@@ -47,6 +47,6 @@ export type FileData = {
     ctime: number;
     mtime: number;
     size: number;
-    data: string[] | Uint8Array
+    data: string[] | Uint8Array<ArrayBuffer>;
     deleted?: boolean;
 }
