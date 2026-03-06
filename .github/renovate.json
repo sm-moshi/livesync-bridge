@@ -29,7 +29,7 @@
       "matchStrings": [
         "\"npm:(?<depName>(?:@[^/]+/)?[^@]+)@(?<currentValue>[^\"]+)\""
       ],
-      "datasource": "npm"
+      "datasourceTemplate": "npm"
     }
   ],
   "registryAliases": {
