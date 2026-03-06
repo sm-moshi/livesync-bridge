@@ -27,9 +27,9 @@
       "description": "Deno import map npm: specifiers in deno.jsonc",
       "managerFilePatterns": ["/deno\\.jsonc?$/"],
       "matchStrings": [
-        "\"npm:(?<depName>[^@]+)@(?<currentValue>[^\"]+)\""
+        "\"npm:(?<depName>(?:@[^/]+/)?[^@]+)@(?<currentValue>[^\"]+)\""
       ],
-      "datasourceTemplate": "npm"
+      "datasource": "npm"
     }
   ],
   "registryAliases": {
